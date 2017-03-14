@@ -59,8 +59,8 @@
                                 (projects . 7))
    dotspacemacs-startup-buffer-responsive t
    dotspacemacs-scratch-mode 'text-mode
-   dotspacemacs-themes '(sanityinc-solarized-dark
-                         spacemacs-dark
+   dotspacemacs-themes '(spacemacs-dark
+                         sanityinc-solarized-dark
                          spacemacs-light)
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font '("Source Code Pro"
