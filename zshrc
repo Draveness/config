@@ -13,24 +13,13 @@ export http_proxy=http://127.0.0.1:6152
 export ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
-export LC_ALL=en_US.UTF-8  
+export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export EDITOR=vim
 export CLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs/workspace"
 
-# Configure PATH
-export PATH="$PATH:/usr/local/ssl/bin"
-export PATH="$PATH:/usr/local/bin:/usr/local/sbin"
-export PATH="$PATH:/bin"
-export PATH="$PATH:/usr/sbinn"
-export PATH="$PATH:/sbin"
-export PATH="$PATH:."
-export PATH="$PATH:./node_modules/.bin"
-export PATH="$HOME/.rvm/bin:$PATH"
-export PATH="/usr/local/rvm/bin:$PATH"
-
 # Alias
-alias emacs="emacsclient . &"
+alias es="emacsclient ."
 alias xc="find . -name '*.xcworkspace' -maxdepth 2 | grep -v xcodeproj | head -n 1 | xargs open" # open first workspace in current folder
 alias xp="find . -name '*.xcodeproj'  -maxdepth 1 | head -n 1 | xargs open" # open first xcode project in current folder
 alias vz='vim ~/.zshrc'
@@ -40,7 +29,7 @@ alias o="open "
 alias oc="open ."
 alias atm="open -a Atom "
 alias rh="source ~/.zshrc"
-alias purgeallbuilds='rm -rf ~/Library/Developer/Xcode/DerivedData/*' 
+alias purgeallbuilds='rm -rf ~/Library/Developer/Xcode/DerivedData/*'
 copyToBoard() {
     cat $1 | pbcopy
 }
@@ -107,7 +96,7 @@ eval $(thefuck --alias)
 
 # SSH
 SSH_ENV=$HOME/.ssh/environment
-   
+
 # start the ssh-agent
 function start_agent {
     echo "Initializing new SSH agent..."
@@ -118,10 +107,10 @@ function start_agent {
     . "${SSH_ENV}" > /dev/null
     /usr/bin/ssh-add
 }
-   
+
 if [ -f "${SSH_ENV}" ]; then
-     . "${SSH_ENV}" > /dev/null
-     ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+    . "${SSH_ENV}" > /dev/null
+    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
         start_agent;
     }
 else
