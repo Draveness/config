@@ -10,16 +10,26 @@ plugins=(git)
 export https_proxy=http://127.0.0.1:6152
 export http_proxy=http://127.0.0.1:6152
 
+export TERM=xterm-256color
+
 export ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-export EDITOR=vim
+#export EDITOR=vim
+export ALTERNATE_EDITOR='TERM=xterm-256color emacsclient -nw'
+export EDITOR='TERM=xterm-256color emacsclient -nw'
+export VISUAL='TERM=xterm-256color emacsclient -nw'
 export CLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs/workspace"
 
 # Alias
-alias es="emacsclient ."
+alias et="emacsclient -t"
+openInEmacs() {
+    emacsclient -c $1 &
+}
+alias ec=openInEmacs
+#alias ef="emacsclient -t $(fzf)"
 alias xc="find . -name '*.xcworkspace' -maxdepth 2 | grep -v xcodeproj | head -n 1 | xargs open" # open first workspace in current folder
 alias xp="find . -name '*.xcodeproj'  -maxdepth 1 | head -n 1 | xargs open" # open first xcode project in current folder
 alias vz='vim ~/.zshrc'
@@ -131,3 +141,5 @@ eval $(/usr/libexec/path_helper -s)
 
 # added by travis gem
 [ -f /Users/draveness/.travis/travis.sh ] && source /Users/draveness/.travis/travis.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
