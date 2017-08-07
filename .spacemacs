@@ -156,6 +156,7 @@
 (defun dotspacemacs/user-init ()
   (my-setup-indent 2) ;; indent two spaces width
   (setq exec-path-from-shell-check-startup-files nil) ;; disable exec path from shell warnings
+  (setq neo-show-hidden-files nil)
   )
 
 (defun dotspacemacs/user-config ()
