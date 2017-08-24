@@ -120,7 +120,7 @@
    dotspacemacs-show-transient-state-color-guide t
    dotspacemacs-mode-line-unicode-symbols t
    dotspacemacs-smooth-scrolling t
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers t
    dotspacemacs-folding-method 'evil
    dotspacemacs-smartparens-strict-mode nil
    dotspacemacs-smart-closing-parenthesis nil
@@ -156,6 +156,7 @@
 (defun dotspacemacs/user-init ()
   (my-setup-indent 2) ;; indent two spaces width
   (setq exec-path-from-shell-check-startup-files nil) ;; disable exec path from shell warnings
+  (setq create-lockfiles nil)
   (setq neo-show-hidden-files nil)
   )
 
