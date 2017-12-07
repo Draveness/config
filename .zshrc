@@ -7,9 +7,6 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(history ip)
 #POWERLEVEL9K_TIME_BACKGROUND='white'
 plugins=(git)
 
-export https_proxy=http://127.0.0.1:6152
-export http_proxy=http://127.0.0.1:6152
-
 export TERM=xterm-256color
 
 export ZSH=$HOME/.oh-my-zsh
@@ -40,6 +37,7 @@ alias oc="open ."
 alias atm="open -a Atom "
 alias rh="source ~/.zshrc"
 alias purgeallbuilds='rm -rf ~/Library/Developer/Xcode/DerivedData/*'
+alias cat="ccat"
 copyToBoard() {
     cat $1 | pbcopy
 }
@@ -100,6 +98,7 @@ alias p4="proxychains4 "
 alias backup="$BLOG/backup.sh "
 alias rails5="~/rails/railties/exe/rails"
 alias pin="pod install --no-repo-update"
+alias new_post="ssh blog 'cd /srv/jekyll/ && git pull && jekyll build'"
 
 # the fuck
 eval $(thefuck --alias)
@@ -143,3 +142,9 @@ eval $(/usr/libexec/path_helper -s)
 [ -f /Users/draveness/.travis/travis.sh ] && source /Users/draveness/.travis/travis.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export https_proxy=http://127.0.0.1:1235;export http_proxy=http://127.0.0.1:1235
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/draveness/.sdkman"
+[[ -s "/Users/draveness/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/draveness/.sdkman/bin/sdkman-init.sh"
